@@ -1,6 +1,7 @@
 {
   "variables": {
     "iso_location": "/Users/robertjames/Downloads",
+    "my-output-directory": "/Users/robertjames/Documents",
     "operating-system": "OEL",
     "os-version": "6_7-x86_64",
     "boot-iso": "V77197-01.iso",
@@ -14,7 +15,7 @@
   "builders": [{
     "type": "vmware-iso",
     "vm_name": "{{user `customer`}}_{{user `operating-system`}}{{user `os-version`}}",
-    "output_directory": "/Users/robertjames/Documents/{{user `customer`}}",    
+    "output_directory": "{{user `my-output-directory`}}/{{user `customer`}}",    
     "headless": false,
     "disk_size": "80960",    
     "guest_os_type": "oraclelinux-64",
