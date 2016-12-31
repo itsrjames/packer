@@ -16,7 +16,7 @@
     "type": "vmware-iso",
     "vm_name": "{{user `customer`}}_{{user `operating-system`}}{{user `os-version`}}",
     "output_directory": "{{user `my-output-directory`}}/{{user `customer`}}",    
-    "headless": false,
+    "headless": true,
     "disk_size": "80960",    
     "guest_os_type": "oraclelinux-64",
     "iso_url": "{{user `iso_location`}}/{{user `boot-iso`}}",
@@ -28,6 +28,7 @@
     "http_directory": "http",
     "ssh_username": "root",
     "ssh_password": "password",
+    "ssh_wait_timeout": "2m",
     "vmx_data": {
         "memsize": "1024",
         "numvcpus": "1",
