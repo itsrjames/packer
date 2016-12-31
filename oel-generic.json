@@ -28,7 +28,7 @@
     "http_directory": "http",
     "ssh_username": "root",
     "ssh_password": "password",
-    "ssh_wait_timeout": "2m",
+    "ssh_wait_timeout": "6m",
     "vmx_data": {
         "memsize": "1024",
         "numvcpus": "1",
