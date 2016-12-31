@@ -1,0 +1,53 @@
+{
+  "variables": {
+    "iso_location": "/Users/robertjames/Downloads",
+    "operating-system": "OEL",
+    "os-version": "6_7-x86_64",
+    "boot-iso": "V77197-01.iso",
+    "boot-iso-checksum": "dd7231b378f23e2e846ac78b0c5d8974a23631d5",
+    "boot-iso-checksum-type": "sha1",
+    "vmware-tools-iso-location": "/Users/robertjames/Downloads",
+    "vmware-tools-iso": "linux-tools.iso",
+    "customer": "CUSTOMER_VM"
+  },
+
+  "builders": [{
+    "type": "vmware-iso",
+    "vm_name": "{{user `customer`}}_{{user `operating-system`}}{{user `os-version`}}",
+    "output_directory": "/Users/robertjames/Documents/{{user `customer`}}",    
+    "headless": false,
+    "disk_size": "80960",    
+    "guest_os_type": "oraclelinux-64",
+    "iso_url": "{{user `iso_location`}}/{{user `boot-iso`}}",
+    "iso_checksum": "{{user `boot-iso-checksum`}}",
+    "iso_checksum_type": "{{user `boot-iso-checksum-type`}}",
+    "boot_command": [
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/OEL_6_7-x86_64/ks.cfg<enter>"
+    ],
+    "http_directory": "http",
+    "ssh_username": "root",
+    "ssh_password": "password",
+    "vmx_data": {
+        "memsize": "1024",
+        "numvcpus": "1",
+        "vhv.enable": "TRUE",
+        "ethernet0.connectionType": "nat"
+    },    
+    "shutdown_command": "shutdown -P now"
+  }],
+  "provisioners": [
+        {
+          "type": "file",
+          "source": "{{user `vmware-tools-iso-location`}}/{{user `vmware-tools-iso`}}",
+          "destination": "/tmp/linux-tools.iso"
+        },
+        {
+          "type": "shell",
+          "script": "scripts/install-vmware-guest-additions.sh"
+        },        
+        {
+          "type": "shell",
+          "script": "scripts/install-gnome-gui.sh"
+        }        
+  ]  
+}
