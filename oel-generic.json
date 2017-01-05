@@ -23,7 +23,7 @@
     "iso_checksum": "{{user `boot-iso-checksum`}}",
     "iso_checksum_type": "{{user `boot-iso-checksum-type`}}",
     "boot_command": [
-      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/OEL_6_7-x86_64/ks.cfg<enter>"
+      "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/OEL_6_7-x86_64/ks-run.cfg<enter>"
     ],
     "http_directory": "http",
     "ssh_username": "root",
