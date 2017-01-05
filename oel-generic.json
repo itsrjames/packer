@@ -33,7 +33,17 @@
         "memsize": "1024",
         "numvcpus": "1",
         "vhv.enable": "TRUE",
-        "ethernet0.connectionType": "nat"
+        "ethernet0.connectionType": "nat",
+        "hgfs.mapRootShare": "TRUE",
+        "hgfs.linkRootShare": "TRUE",
+        "sharedFolder0.present": "TRUE",
+        "sharedFolder0.enabled": "TRUE",
+        "sharedFolder0.readAccess": "TRUE",
+        "sharedFolder0.writeAccess": "TRUE",
+        "sharedFolder0.hostPath": "/Users/robertjames/Downloads",
+        "sharedFolder0.guestName": "Downloads",
+        "sharedFolder0.expiration": "never",
+        "sharedFolder.maxNum": "1"        
     },    
     "shutdown_command": "shutdown -P now"
   }],
