@@ -60,6 +60,10 @@
         {
           "type": "shell",
           "script": "scripts/install-gnome-gui.sh"
-        }        
+        },
+        {
+          "type": "shell",
+          "script": "scripts/getip-and-host-add-to-hosts.sh"
+        }                
   ]  
 }

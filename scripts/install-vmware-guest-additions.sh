@@ -42,3 +42,4 @@ cd /tmp
 rm -rf vmware-tools-distrib
 rm -f VMwareTools*.tar.gz
 rm /tmp/linux-tools.iso
+
