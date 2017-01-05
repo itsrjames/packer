@@ -9,7 +9,7 @@
     "boot-iso-checksum-type": "sha1",
     "vmware-tools-iso-location": "/Users/robertjames/Downloads",
     "vmware-tools-iso": "linux-tools.iso",
-    "customer": "CUSTOMER_VM"
+    "customer": "MBPRO_ORA_VM"
   },
 
   "builders": [{
